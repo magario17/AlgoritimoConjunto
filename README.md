@@ -5,7 +5,7 @@ Coleção de operações de conjuntos
 
 A coleção conta com metodos para realizar a operações de conjunto.
 
-*conjunto()
+* conjunto()
 
   Construtor da Classe
   
