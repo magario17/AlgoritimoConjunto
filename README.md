@@ -11,11 +11,11 @@ A coleção conta com metodos para realizar a operações de conjunto.
   
   
   
-*adicionar(<T>)
+* adicionar(<T>)
 
   Para adicionar um elemento do tipo Generic. Retorna um boolean
   
-*remover(<T>)
+* remover(<T>)
 
   Para remover um elemento do tipo Generic. Retorna um boolean
   
@@ -23,6 +23,6 @@ A coleção conta com metodos para realizar a operações de conjunto.
 
   Verifica se o elemento pertence ao conjunto. Retorna um boolean
   
-*continecia(Conjunto<T>
+* continecia(Conjunto<T>
   
   Verifica se um conjunto está contido em outro conjunto. Retorna um boolea
