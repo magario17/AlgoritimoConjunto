@@ -5,24 +5,22 @@ Coleção de operações de conjuntos
 
 A coleção conta com metodos para realizar a operações de conjunto.
 
-* conjunto()
+## conjunto()
 
-  Construtor da Classe
+  * Construtor da Classe
   
-  
-  
-* adicionar(<T>)
+## adicionar(<T>)
 
-  Para adicionar um elemento do tipo Generic. Retorna um boolean
+  * Para adicionar um elemento do tipo Generic. Retorna um boolean
   
-* remover(<T>)
+## remover(<T>)
 
-  Para remover um elemento do tipo Generic. Retorna um boolean
+  * Para remover um elemento do tipo Generic. Retorna um boolean
   
-*pertinencia(<T>)
+## pertinencia(<T>)
 
-  Verifica se o elemento pertence ao conjunto. Retorna um boolean
+  * Verifica se o elemento pertence ao conjunto. Retorna um boolean
   
-* continecia(Conjunto<T>
+## continecia(Conjunto<T>
   
-  Verifica se um conjunto está contido em outro conjunto. Retorna um boolea
+  * Verifica se um conjunto está contido em outro conjunto. Retorna um boolea
