@@ -103,6 +103,17 @@ public class Conjunto<T> {
 		return this.Diferenca(universo);
 	}
 	
+	public Conjunto<Tuplas<T>> Cartesiano(Conjunto<T> conjunto){
+		Conjunto<Tuplas<T>> produto = new Conjunto<Tuplas<T>>(this.name + " x " + conjunto.name);
+		for(T item: this.items){
+			for(T item2: conjunto.items){
+				Tuplas<T> t = new Tuplas<T>(item, item2);
+				produto.Adicionar(t);
+			}
+		}
+		return produto;
+	}
+	
 	public boolean EhVazio(){
 		if(this.items.size() == 0){
 			return true;
