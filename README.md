@@ -53,13 +53,35 @@ Coleção de métodos implementados para operações de conjuntos genéricos.
     A U B = { gato, coelho, cachorro, leão, urso panda }// conjunto 'A U B', resultado da união.
     A ^ B = { coelho }                                  // conjunto 'A ^ B', resultado da intersecção.
     A - B = { gato, cachorro }                          // conjunto 'A - B', resultado da diferença.
-    
+
 ## Conjunto universo
 
 Definindo um conjunto universo num conjunto `u`, podemos utiliza o método `Complemento` para saber o Complemento de um conjunto `a`
 
 ***input***
+
     a.Complemento(u);
+
+## Operações avançadas de conjunto
+
+***input***
+
+    Conjunto<Integer> a = new Conjunto<Integer>("A");
+    a.Adicionar(1);
+    a.Adicionar(2);
+    a.Adicionar(3);
+    
+    Conjunto<Integer> b = new Conjunto<Integer>("B");
+    b.Adicionar(2);
+    b.Adicionar(4);
+    b.Adicionar(6);
+    
+    Conjunto<Tuplas<Integer>> c = a.Cartesiano(b);       // Informa o produto Cartesiano
+    c.Imprimir();
+    
+***output***
+
+    A x B = {(1, 2), (1, 4), (1, 6), (2, 2), (2, 4), (2, 6), (3, 2), (3, 4), (3, 6)} 
 
 ## Outros métodos
 
