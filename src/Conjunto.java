@@ -90,11 +90,11 @@ public class Conjunto<T> {
 			}
 		}
 		
-		for(T item: conjunto.items){
+		/*for(T item: conjunto.items){
 			if(!this.Pertinencia(item)){
 				diferenca.Adicionar(item);
 			}
-		}
+		}*/
 		
 		return diferenca;
 	}

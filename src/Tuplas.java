@@ -1,5 +1,5 @@
 public class Tuplas<T>{
-  public T t1;
+	public T t1;
 	public T t2;
 	
 	public Tuplas(T t1, T t2) {
