@@ -28,11 +28,9 @@ public class Conjunto<T> {
 	public void Adicionar(T valor){ 
 		items.add(valor); 
 	}
-	
 	public void Adicionar(List<T> items){
 		this.items.addAll(items);
 	}
-	
 	public boolean Remover(T valor){
 		try {
 			items.remove(valor);
@@ -48,7 +46,6 @@ public class Conjunto<T> {
 		}
 		return false;
 	}
-	
 	public boolean Continencia(Conjunto<T> conjunto){
 		for(T item: conjunto.items){
 			if(!this.Pertinencia(item)){
@@ -57,7 +54,6 @@ public class Conjunto<T> {
 		}
 		return true;
 	}
-	
 	public Conjunto<T> Uniao(Conjunto<T> conjunto){
 		Conjunto<T> uniao = new Conjunto<T>(this.name + " U " + conjunto.name);
 		uniao.Adicionar(this.items);
@@ -68,7 +64,6 @@ public class Conjunto<T> {
 		}		
 		return uniao;
 	}
-	
 	public Conjunto<T> Interseccao(Conjunto<T> conjunto){
 		Conjunto<T> inter = new Conjunto<T>(this.name + " ^ " + conjunto.name);
 		
@@ -80,7 +75,6 @@ public class Conjunto<T> {
 		
 		return inter;
 	}
-	
 	public Conjunto<T> Diferenca(Conjunto<T> conjunto){
 		Conjunto<T> diferenca = new Conjunto<T>(this.name + " - " + conjunto.name);
 
@@ -98,11 +92,9 @@ public class Conjunto<T> {
 		
 		return diferenca;
 	}
-	
 	public Conjunto<T> Complemento(Conjunto<T> universo){	
 		return this.Diferenca(universo);
 	}
-	
 	public Conjunto<Tuplas<T>> Cartesiano(Conjunto<T> conjunto){
 		Conjunto<Tuplas<T>> produto = new Conjunto<Tuplas<T>>(this.name + " x " + conjunto.name);
 		for(T item: this.items){
@@ -120,12 +112,52 @@ public class Conjunto<T> {
 		}
 		return false;
 	}
-	
 	public void Limpar(){
 		this.items.clear();
 	}
-
 	public int Cadinalidade() {
 		return items.size(); 
+	}
+	
+	protected int Max(){
+		int max = 0;
+		for(int i=0 ; i< this.Cadinalidade() ; i++){
+			if(Integer.parseInt(this.items.get(i).toString()) > max){
+				max = pInt(this.items.get(i));
+			}
+		}
+		return max;
+	}
+	
+	public int pInt(Object n){
+		return Integer.parseInt(n.toString());
+	}
+	
+	public Conjunto<Integer> CountSort(){
+		int [] cnt = new int [this.Max() + 1];
+		int [] b = new int [this.Cadinalidade()];
+		
+		for(int i=0 ; i<this.Cadinalidade() ; i++){
+			cnt[pInt(this.items.get(i))] ++;
+		}
+		
+		for(int i=1 ; i<cnt.length ; i++){
+			cnt[i]+= cnt[i-1];
+		}
+		
+		for(int i=0 ; i<this.Cadinalidade() ; i++){
+			cnt[pInt(this.items.get(i))]--;
+			b[cnt[pInt(this.items.get(i))]] = pInt(this.items.get(i));
+		}
+		
+		this.Limpar();
+
+		Conjunto<Integer> B = new Conjunto<Integer>("[Countsort] " + this.name);
+				
+		for(int i=0 ; i<b.length ; i++){
+			B.Adicionar(b[i]);
+		}
+		
+		return B;
 	}
 }
