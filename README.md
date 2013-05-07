@@ -100,3 +100,26 @@ Definindo um conjunto universo num conjunto `u`, podemos utiliza o método `Comp
 
     false                                               // retorno para ehVazio
     3                                                   // retorno para Cardinalidade
+    
+## Count Sort
+
+***input***
+
+    Conjunto<Integer> a = new Conjunto<Integer>("A");
+    a.Adicionar(1);
+    a.Adicionar(2);
+    a.Adicionar(3);
+    a.Adicionar(0);
+    a.Adicionar(4);
+    a.Adicionar(6);
+
+    a.Imprimir();
+
+    Conjunto<Integer> b = a.CountSort();                // Ordena o conjunto do tipo INT ou Integer
+    b.Imprimir();
+    
+***output***
+    
+    A = {1, 2, 3, 0, 4, 6}
+    [Countsort] A = {0, 1, 2, 3, 4, 6}                  // Conjunto A ordenado
+
