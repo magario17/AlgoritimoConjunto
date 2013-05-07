@@ -5,28 +5,17 @@ public class teste {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Conjunto<String> a = new Conjunto<String>("A");
-		a.Adicionar("a");
-		a.Adicionar("b");
-		a.Adicionar("c");
-		a.Adicionar("d");
-		a.Imprimir();
-		
-		Conjunto<String> b = new Conjunto<String>("B");
-		b.Adicionar("c");
-		b.Adicionar("d");
-		b.Adicionar("e");
-		b.Adicionar("f");
-		b.Imprimir();
-		
-		Conjunto<String> c = a.Uniao(b);
-		c.Imprimir();
-
-		Conjunto<String> d = a.Interseccao(b);
-		d.Imprimir();
-		
-		Conjunto<String> e = a.Diferenca(b);
-		e.Imprimir();
+	    Conjunto<Integer> a = new Conjunto<Integer>("A");
+	    a.Adicionar(1);
+	    a.Adicionar(2);
+	    a.Adicionar(3);
+	    a.Adicionar(0);
+	    a.Adicionar(4);
+	    a.Adicionar(6);
+	    
+	    a.Imprimir();
+	    
+	    a.CountSort().Imprimir();
 	}
 
 	public static void Imprimir(Object out){
