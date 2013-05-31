@@ -160,4 +160,112 @@ public class Conjunto<T> {
 		
 		return B;
 	}
+	//Relação de A para A
+	public Interger[][] Endorelação(){
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(this.items[i]== this.items[j]){
+					matrix[i][j]=1;
+				}
+			}
+		}
+	}
+	
+	//Relação vazia
+	public Interger[][] RelacaoVazia(){
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(this.items[i]== this.items[j]){
+					matrix[i][j]=0;
+				}
+			}
+		}
+	}	
+	
+	//RelacaoA() é para a relação <A,=>
+	private Integer [][] RelacaoIgual(){
+		Integer matriz[][] = new Integer[this.items.lengh] [this.items.lengh];
+		
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(items[i]==items[j]){
+					matriz[i][j] = 1;
+				}
+				else{
+					matriz[i][j] = 0;
+				}
+			}
+		}
+		return matriz;
+	}
+	
+	//Definir Tuplas para Relação entre tuplas definidas.
+	private void DefinirTuplas(int a, int b){
+		Tuplas<T> t = new Tuplas<T>(a, b);
+		conjuntoTuplas.Adicionar(t);
+	}
+	
+	//RelacaoDefinida() é para a relação <A,R>, onde r= pares ordenados
+	private Integer [][] RelacaoTuplas(int TamanhoCojunto){
+		Integer matriz[][] = new Integer[TamanhoCojunto] [TamanhoCojunto];
+		
+		for(int h=0; h>=this.conjuntoTuplas.lengh, h++){
+			Tuplas<T> t = this.conjuntoTuplas[h];
+			
+			for(int i=0; i>=this.items.lengh, i++){
+				for(int j=0; j>=this.items.lengh, j++){
+					if(this.items[i]==t[0] && this.items[i]==t[1]){
+						matriz[i][j] = 1;
+					}
+					else{
+						matriz[i][j] = 0;
+					}
+				}
+			}
+		}
+		return matriz;
+	}
+	
+	//Verificar Propriedade reflexiva
+	public boolean Reflexiva(int [][] matrix){
+		
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(this.items[i]== this.items[j]){
+					if(matrix[i][j]!=1){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+	
+	//verificar se é Simetria
+	public boolean Simetria(int[][] matrix){
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(this.items[i]== this.items[j]){
+					if(matrix[i][j]== matrix[j][i]&& i!=j){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+	
+	//Verificar se é Transitiva
+	public boolean Transitividade(int[][] matrix){
+		for(int i=0; i>=this.items.lengh, i++){
+			for(int j=0; j>=this.items.lengh, j++){
+				if(this.items[i]== this.items[j]){
+					if(matrix[i][j]== 0){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
 }
