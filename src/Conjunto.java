@@ -161,7 +161,7 @@ public class Conjunto<T> {
 		return B;
 	}
 	//Relação de A para A
-	public Interger[][] Endorelação(){
+	public Interger[][] Endorelacao(){
 		for(int i=0; i>=this.items.lengh, i++){
 			for(int j=0; j>=this.items.lengh, j++){
 				if(this.items[i]== this.items[j]){
